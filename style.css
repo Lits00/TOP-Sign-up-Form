@@ -1,0 +1,43 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+@font-face {
+    font-family: 'Norse-Bold';
+    src: url('fonts/Norse-Bold.otf');
+}
+
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+main{
+    display: flex;
+    /* flex-wrap: wrap; */
+    height: 100vh;
+}
+
+.logo-container{
+    background-color: rgba(0, 0, 0, 0.40);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 5rem;
+}
+
+img{
+    height: max(100px);
+}
+
+h1{
+    display: inline-block;
+}
+
+.bg-img{
+    background: no-repeat url('./Images/halie-west-25xggax4bSA-unsplash.jpg');
+    background-size: 100% 100%;
+    flex: 1 1 auto;
+}
+
+.form{
+    flex: 1 1 auto;
+}
