@@ -9,49 +9,69 @@
 </head>
 <body>
     <main>
-        <section class="bg-img">
+        <section class="left">
             <div class="logo-container">
                 <img src="./Images/odin-lined.png" alt="Odin-logo"><h1>ODIN</h1>
             </div>
-            <p>Photo by <a href="https://unsplash.com/@haliewestphoto?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Halie West</a> on <a href="https://unsplash.com/photos/25xggax4bSA?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>
+            <p class="credits credits-c">Photo by <a class="credits-c" href="https://unsplash.com/@haliewestphoto?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Halie West</a> on <a class="credits-c" href="https://unsplash.com/photos/25xggax4bSA?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>
             </p>
         </section>
-        <section class="form">
+        <section class="right">
             <div class="one">
                 <p>This is not a real online service! You know you need something like this in your life to help you realize your deepest dreams.</p>
-                <p>Sign up now to get started.</p>
-                <p>You know you want to.</p>
+                <p>Sign up <em>now</em> to get started.</p>
+                <p class="para-space">You <em>know</em> you want to.</p>
             </div>
             <div class="two">
-                <form action="">
+                <form action="#" id="inputForm">
                     <fieldset>
                         <legend>Let's do this!</legend>
-
-                        <input type="text" id="first-name" name="first-name">
-                        <label for="first-name">First Name</label>
-
-                        <input type="text" id="last-name" name="last-name">
-                        <label for="last-name">LAST NAME</label>
-
-                        <input type="email" id="email" name="email">
-                        <label for="email">EMAIL</label>
-
-                        <input type="number" id="phone-num" name="phone-num">
-                        <label for="phone-num">PHONE NUMBER</label>
-
-                        <input type="password" id="password" name="password" required>
-                        <label for="password">PASSWORD</label>
-
-                        <input type="password" id="confirm-pass" name="confirm-pass" required>
-                        <label for="confirm-pass">CONFIRM PASSWORD</label>
+                        <div class="grid">
+                            <div>
+                                <label for="first-name">FIRST NAME</label>
+                                <input type="text" id="first-name" name="first-name">
+                            </div>
+                            <div>
+                                <label for="last-name">LAST NAME</label>
+                                <input type="text" id="last-name" name="last-name">
+                            </div>
+                            <div>
+                                <label for="email">EMAIL</label>
+                                <input type="email" id="email" name="email">
+                            </div>
+                            <div>
+                                <label for="phone-num">PHONE NUMBER</label>
+                                <input type="number" id="phone-num" name="phone-num" minlength="10" maxlength="10">
+                            </div>
+                            <div>
+                                <label for="password">PASSWORD</label>
+                                <input type="password" class="error" id="password" name="password" required>
+                            </div>
+                            <div>
+                                <label for="confirm-pass">CONFIRM PASSWORD</label>
+                                <input type="password" class="error" id="confirm-pass" name="confirm-pass" required>
+                            </div>
+                            
+                        </div>
                     </fieldset>
                 </form>
             </div>
-            <div class="one">
-                <button class="create-acc">Create Account</button>
-                <p>Already have an account?<span><a href="#">Log in</a></span></p>
+            <div class="three">
+                <button type="submit" class="create-acc" form="inputForm">Create Account</button>
+                <p class="para-space">Already have an account? <span><a href="#">Log in</a></span></p>
             </div>
         </section>
     </main>
+
+    <script>
+        const form = document.querySelector('#inputForm');
+        const password = document.querySelector('#password');
+        const comfirmPass = document.querySelector('#confirm-pass');
+
+        form.addEventListener('submit', e => {
+            e.preventDefault();
+            password.value !== comfirmPass.value ? alert('Password does not match') : form.submit();    
+        })
+    </script>
 </body>
 </html>

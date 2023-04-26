@@ -4,7 +4,8 @@
     src: url('fonts/Norse-Bold.otf');
 }
 
-*{
+*{  
+    --btn-color: #596D48;
     box-sizing: border-box;
     margin: 0;
     padding: 0;
@@ -14,6 +15,14 @@ main{
     display: flex;
     /* flex-wrap: wrap; */
     height: 100vh;
+    position: relative;
+    font-family: 'Roboto', sans-serif;
+}
+
+.left{
+    background: no-repeat url('./Images/halie-west-25xggax4bSA-unsplash.jpg');
+    background-size: 100% 100%;
+    flex: 1 1 auto;
 }
 
 .logo-container{
@@ -21,7 +30,8 @@ main{
     display: flex;
     align-items: center;
     justify-content: center;
-    margin-top: 5rem;
+    margin-top: 10rem;
+    padding: .5rem;
 }
 
 img{
@@ -30,14 +40,114 @@ img{
 
 h1{
     display: inline-block;
+    color: white;
+    font-family: 'Norse-Bold', Roboto;
+    font-size: 4rem;
 }
 
-.bg-img{
-    background: no-repeat url('./Images/halie-west-25xggax4bSA-unsplash.jpg');
-    background-size: 100% 100%;
-    flex: 1 1 auto;
+.credits{
+    display: inline-block;
+    width: 100%;
+    color: white;
+    position: relative;
+    top: 55vh;
+    text-align: center;
+    font-size: 12px;
 }
 
-.form{
+.credits-c{
+    color: white;
+}
+
+.right{
     flex: 1 1 auto;
+    display: flex;
+    flex-flow: column wrap;
+}
+
+.para-space{
+    margin: 1.5rem 0 0;
+}
+
+.one p{
+    font-weight: bold;
+    position: relative;
+    top: 4rem;
+}
+
+.two{
+    padding-bottom: 0 !important;
+    box-shadow: 0rem 1rem 1rem .3rem;
+}
+
+.one, .three{
+    background-color: rgb(245, 242, 242);
+}
+
+.one, .two, .three{
+    flex: 1 1 auto;
+    padding: min(1.5rem);
+}
+
+fieldset{
+    border: none;
+}
+
+legend{
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+.grid{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15%;
+    width: max(500px);
+    margin: 1rem 0 0;
+}
+
+.grid > div{
+    display: flex;
+    flex-direction: column;
+}
+
+label{
+    font-size: .6rem;
+    font-weight: bold;
+    letter-spacing: 2px;
+}
+
+input{
+    border: 1px solid #E5E7EB;
+    border-radius: 5px;
+    padding: .4rem;
+}
+
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button {
+  appearance: none;
+  -webkit-appearance: none;
+}
+
+input:focus{
+    border-color:rgb(31, 59, 174);
+    outline: none;
+    box-shadow: .1rem .1rem .2rem 0 rgba(105, 105, 105, 0.849);
+}
+
+button{
+    background-color: var(--btn-color);
+    border: none;
+    border-radius: 5px;
+    padding: .7rem 2.5rem;
+    color: white;
+    font-family: inherit;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+span > a{
+    color: #596D48;
+    font-weight: bold;
+    text-decoration: none;
 }
